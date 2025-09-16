@@ -432,21 +432,20 @@
   </footer>
 
   <!-- EmailJS -->
-  <script>
-  (function(){ emailjs.init("4QLObDnBskSygap0M"); })();
+<!-- EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init({ publicKey: "4QLObDnBskSygap0M" }); 
+  })();
 
-  // ✅ Toggle product card with max 5 items limit
   function toggleProduct(card) {
     let checkbox = card.querySelector('input[type="checkbox"]');
-
-    // Count already selected items
     let selectedCount = document.querySelectorAll('input[name="item"]:checked').length;
-
     if (!checkbox.checked && selectedCount >= 5) {
       alert("⚠ You can only place order for 5 items per user!");
-      return; // stop selecting 6th item
+      return;
     }
-
     checkbox.checked = !checkbox.checked;
     card.classList.toggle("selected", checkbox.checked);
   }
@@ -467,24 +466,30 @@
     }
 
     emailjs.send("service_ijghezr", "template_qlq9ece", {
-      name, phone, address,
+      name: name,
+      phone: phone,
+      address: address,
       message: selected.join(", "),
       time: new Date().toLocaleString(),
       to_email: "vinayakpalse71@gmail.com"
     }).then(
-      () => {
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
         alert("✅ Order sent successfully!");
         document.getElementById("groceryForm").reset();
         document.querySelectorAll('input[name="item"]').forEach(c => c.checked=false);
         document.querySelectorAll('.product').forEach(p => p.classList.remove("selected"));
       },
-      (error) => { alert("❌ Failed to send order: " + JSON.stringify(error)); }
+      (error) => {
+        console.error("FAILED...", error);
+        alert("❌ Failed to send order: " + JSON.stringify(error));
+      }
     );
   }
 </script>
+
 </body>
 </html>
-
 
 
 
