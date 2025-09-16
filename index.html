@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,52 +12,40 @@
     }
 
     /* Navbar */
-.navbar {
-    position: sticky;
-  top: 0;  
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background: #3139cc;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 1000;
-}
+    .navbar {
+      position: sticky;
+      top: 0;  
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: #3139cc;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      z-index: 1000;
+    }
+    .brand { font-size: 22px; }
+    .live-text {
+      color: red;
+      font-weight: bold;
+      font-size: 16px;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0%, 50%, 100% { opacity: 1; }
+      25%, 75% { opacity: 0; }
+    }
 
-.brand {
-  font-size: 22px;
-}
-
-.live-text {
-  color: red;
-  font-weight: bold;
-  font-size: 16px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-              url('hero.png') center/cover no-repeat;
-  color: white;
-  text-align: center;
-  padding: 100px 20px;
-}
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
-}
-.hero p {
-  font-size: 20px;
-  margin: 0;
-}
-
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url('hero.png') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 { font-size: 42px; margin-bottom: 15px; }
+    .hero p { font-size: 20px; margin: 0; }
 
     /* Container */
     .container {
@@ -75,16 +62,8 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       margin-bottom: 40px;
     }
-    .form-card h3 {
-      text-align: center;
-      margin-bottom: 20px;
-      color:#000000;
-    }
-    .form-card label {
-      font-weight: bold;
-      display: block;
-      margin: 10px 0 5px;
-    }
+    .form-card h3 { text-align: center; margin-bottom: 20px; color:#000; }
+    .form-card label { font-weight: bold; display: block; margin: 10px 0 5px; }
     .form-card input, .form-card textarea {
       width: 100%;
       padding: 10px;
@@ -93,17 +72,10 @@
       margin-bottom: 15px;
       font-size: 14px;
     }
-    .form-card textarea {
-      height: 80px;
-      resize: none;
-    }
+    .form-card textarea { height: 80px; resize: none; }
 
     /* Products */
-    h3.section-title {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #000000;
-    }
+    h3.section-title { text-align: center; margin-bottom: 20px; color: #000; }
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -115,26 +87,25 @@
       border-radius: 12px;
       text-align: center;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      cursor: pointer;
+      transition: transform 0.2s, border 0.2s;
+      position: relative;
     }
-    .product:hover {
-      transform: translateY(-5px);
-    }
+    .product:hover { transform: translateY(-5px); }
     .product img {
       width: 100px;
       height: 100px;
       object-fit: contain;
       margin-bottom: 10px;
     }
-    .product label {
-      font-weight: bold;
-      display: block;
-      margin-top: 5px;
-    }
-    .desc {
-      font-size: 14px;
-      color: #666;
-      margin-top: 5px;
+    .product input[type="checkbox"] { display: none; }
+    .product label { font-weight: bold; display: block; margin-top: 5px; }
+    .desc { font-size: 14px; color: #666; margin-top: 5px; }
+
+    /* Highlight */
+    .product.selected {
+      border: 2px solid #3139cc;
+      background: #f0f4ff;
     }
 
     /* Button */
@@ -150,42 +121,29 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-    button:hover {
-      background: #5b62f0;
-    }
-    footer {
-  background: #222;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  margin-top: 40px;
-}
-footer a {
-  color: #28a745;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-.footer-left p,
-.footer-right p {
-  margin: 0;
-  font-size: 14px;
-}
+    button:hover { background: #5b62f0; }
 
+    /* Footer */
+    footer {
+      background: #222;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      margin-top: 40px;
+    }
+    footer a { color: #28a745; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-left p, .footer-right p { margin: 0; font-size: 14px; }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav class="navbar">
-  <div class="brand">CrazyMart.in</div>
-  <div class="nav-items">
-    <span class="live-text">● Live</span>
-  </div>
-</nav>
-
+    <div class="brand">CrazyMart.in</div>
+    <div class="nav-items"><span class="live-text">● Live</span></div>
+  </nav>
 
   <!-- Hero Section -->
   <div class="hero">
@@ -198,82 +156,296 @@ footer a:hover {
     <div class="form-card">
       <h3>Customer Details</h3>
       <form id="groceryForm">
-        <label>Name:</label>
-        <input type="text" id="name" required>
-
-        <label>Phone:</label>
-        <input type="text" id="phone" required>
-
-        <label>Address:</label>
-        <textarea id="address" required></textarea>
+        <label>Name:</label><input type="text" id="name" required>
+        <label>Phone:</label><input type="text" id="phone" required>
+        <label>Address:</label><textarea id="address" required></textarea>
       </form>
     </div>
 
     <!-- Grocery Items -->
     <h3 class="section-title">Select Grocery Items</h3>
     <div class="product-grid">
+      <!-- Example Products -->
 
-      <!-- ✅ All items with weight & price -->
-      <div class="product"><img src="almonds.png"><input type="checkbox" value="Almonds (200g - ₹200)" name="item"><label>Almonds</label><div class="desc">200g • ₹200</div></div>
-      <div class="product"><img src="aloevera.png"><input type="checkbox" value="Aloevera Gel (100ml - ₹68)" name="item"><label>Aloevera</label><div class="desc">100ml • ₹68</div></div>
-      <div class="product"><img src="apple.png"><input type="checkbox" value="Apple (1kg - ₹150)" name="item"><label>Apple</label><div class="desc">1kg • ₹130</div></div>
-      <div class="product"><img src="avacado.png"><input type="checkbox" value="Avocado (500g - ₹180)" name="item"><label>Avocado</label><div class="desc"> 1 pcs • ₹80</div></div>
-      <div class="product"><img src="banana.png"><input type="checkbox" value="Banana (1 dozen - ₹60)" name="item"><label>Banana</label><div class="desc">12pcs • ₹60</div></div>
-      <div class="product"><img src="Bbread.png"><input type="checkbox" value="Brown Bread (400g - ₹40)" name="item"><label>Brown Bread</label><div class="desc">400g • ₹50</div></div>
-      <div class="product"><img src="blackraisin.png"><input type="checkbox" value="Black Raisin (250g - ₹100)" name="item"><label>Black Raisin</label><div class="desc">250g • ₹130</div></div>
-      <div class="product"><img src="cad.png"><input type="checkbox" value="Cadbury (50g - ₹40)" name="item"><label>Cadbury</label><div class="desc">50g • ₹60</div></div>
-      <div class="product"><img src="cad2.png"><input type="checkbox" value="Cadbury Pack (100g - ₹80)" name="item"><label>Cadbury 2</label><div class="desc">100g • ₹200</div></div>
-      <div class="product"><img src="carrot.png"><input type="checkbox" value="Carrot (1kg - ₹50)" name="item"><label>Carrot</label><div class="desc">250g • ₹40</div></div>
-      <div class="product"><img src="chikku.png"><input type="checkbox" value="Chikku (1kg - ₹70)" name="item"><label>Chikku</label><div class="desc">500g • ₹70</div></div>
-      <div class="product"><img src="cocinnia.png"><input type="checkbox" value="Cocinnia (1kg - ₹45)" name="item"><label>Cocinnia</label><div class="desc">500g • ₹65</div></div>
-      <div class="product"><img src="cool.png"><input type="checkbox" value="Cool Drink (750ml - ₹35)" name="item"><label>Cool Drink</label><div class="desc">250ml • ₹35</div></div>
-      <div class="product"><img src="darkc.png"><input type="checkbox" value="Dark Chocolate (100g - ₹120)" name="item"><label>Dark Chocolate</label><div class="desc">45g • ₹50</div></div>
-      <div class="product"><img src="dates.png"><input type="checkbox" value="Dates (500g - ₹150)" name="item"><label>Dates</label><div class="desc">500g • 90</div></div>
-      <div class="product"><img src="dragon.png"><input type="checkbox" value="Dragon Fruit (1pc - ₹90)" name="item"><label>Dragon Fruit</label><div class="desc">1pc • ₹90</div></div>
-      <div class="product"><img src="eggb.png"><input type="checkbox" value="Egg Brown (12pcs - ₹80)" name="item"><label>Egg Brown</label><div class="desc">12pcs • ₹90</div></div>
-      <div class="product"><img src="eggs.png"><input type="checkbox" value="Eggs (12pcs - ₹70)" name="item"><label>Eggs</label><div class="desc">6pcs • ₹50</div></div>
-      <div class="product"><img src="facewash.png"><input type="checkbox" value="Facewash (100ml - ₹90)" name="item"><label>Facewash</label><div class="desc">100ml • ₹99</div></div>
-      <div class="product"><img src="guva.png"><input type="checkbox" value="Guava (1kg - ₹60)" name="item"><label>Guava</label><div class="desc">500g • ₹89</div></div>
-      <div class="product"><img src="honey.png"><input type="checkbox" value="Honey (500g - ₹180)" name="item"><label>Honey</label><div class="desc">200g • ₹89</div></div>
-      <div class="product"><img src="kaju.png"><input type="checkbox" value="Kaju (200g - ₹200)" name="item"><label>Cashew</label><div class="desc">200g • ₹199</div></div>
-      <div class="product"><img src="kajukatli.png"><input type="checkbox" value="Kaju Katli (500g - ₹400)" name="item"><label>Kaju Katli</label><div class="desc">500g • ₹400</div></div>
-      <div class="product"><img src="kiwi.png"><input type="checkbox" value="Kiwi (500g - ₹120)" name="item"><label>Kiwi</label><div class="desc">3 pcs • ₹119</div></div>
-      <div class="product"><img src="milk.png"><input type="checkbox" value="Milk (1L - ₹50)" name="item"><label>Milk</label><div class="desc">500mL • ₹39</div></div>
-      <div class="product"><img src="milkchitale.png"><input type="checkbox" value="Milk Chitale (1L - ₹55)" name="item"><label>Milk Chitale</label><div class="desc">500mL • ₹39</div></div>
-      <div class="product"><img src="multigrain_bread.png"><input type="checkbox" value="Multigrain Bread (400g - ₹45)" name="item"><label>Multigrain Bread</label><div class="desc">400g • ₹45</div></div>
-      <div class="product"><img src="oats.png"><input type="checkbox" value="Oats (1kg - ₹120)" name="item"><label>Oats</label><div class="desc">1kg • ₹120</div></div>
-      <div class="product"><img src="orange.png"><input type="checkbox" value="Orange (1kg - ₹80)" name="item"><label>Orange</label><div class="desc">500g • ₹80</div></div>
-      <div class="product"><img src="papaya.png"><input type="checkbox" value="Papaya (1kg - ₹50)" name="item"><label>Papaya</label><div class="desc">1pcs • ₹50</div></div>
-      <div class="product"><img src="parksoap.jpg"><input type="checkbox" value="Park Soap (100g - ₹30)" name="item"><label>Park Soap</label><div class="desc"> 4 * 125 g • ₹169</div></div>
-      <div class="product"><img src="parksoap1.jpg"><input type="checkbox" value="Park Soap 1 (100g - ₹35)" name="item"><label>Park Soap 1</label><div class="desc">4 * 125 g• ₹169</div></div>
-      <div class="product"><img src="pineapple.png"><input type="checkbox" value="Pineapple (1pc - ₹70)" name="item"><label>Pineapple</label><div class="desc">1pc • ₹80</div></div>
-      <div class="product"><img src="plum.png"><input type="checkbox" value="Plum (500g - ₹100)" name="item"><label>Plum</label><div class="desc">500g • ₹00</div></div>
-      <div class="product"><img src="tomato.png"><input type="checkbox" value="Tomato (1kg - ₹40)" name="item"><label>Tomato</label><div class="desc">500g • ₹30</div></div>
-      <div class="product"><img src="waterm.png"><input type="checkbox" value="Watermelon (1pc - ₹90)" name="item"><label>Watermelon</label><div class="desc">1pc • ₹90</div></div>
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Almonds (200g - ₹200)" name="item">
+  <img src="almonds.png">
+  <label>Almonds</label>
+  <div class="desc">200g • ₹199</div>
+</div>
 
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Aloevera Gel (100ml - ₹68)" name="item">
+  <img src="aloevera.png">
+  <label>Aloevera</label>
+  <div class="desc">100ml • ₹68</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Apple (1kg - ₹150)" name="item">
+  <img src="apple.png">
+  <label>Apple</label>
+  <div class="desc">1kg • ₹130</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Avocado (500g - ₹180)" name="item">
+  <img src="avacado.png">
+  <label>Avocado</label>
+  <div class="desc">1 pcs • ₹80</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Banana (1 dozen - ₹60)" name="item">
+  <img src="banana.png">
+  <label>Banana</label>
+  <div class="desc">12pcs • ₹60</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Brown Bread (400g - ₹40)" name="item">
+  <img src="Bbread.png">
+  <label>Brown Bread</label>
+  <div class="desc">400g • ₹50</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Black Raisin (250g - ₹100)" name="item">
+  <img src="blackraisin.png">
+  <label>Black Raisin</label>
+  <div class="desc">250g • ₹130</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Cadbury (50g - ₹40)" name="item">
+  <img src="cad.png">
+  <label>Cadbury</label>
+  <div class="desc">50g • ₹60</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Cadbury Pack (100g - ₹80)" name="item">
+  <img src="cad2.png">
+  <label>Cadbury 2</label>
+  <div class="desc">100g • ₹200</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Carrot (1kg - ₹50)" name="item">
+  <img src="carrot.png">
+  <label>Carrot</label>
+  <div class="desc">250g • ₹40</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Chikku (1kg - ₹70)" name="item">
+  <img src="chikku.png">
+  <label>Chikku</label>
+  <div class="desc">500g • ₹70</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Cocinnia (1kg - ₹45)" name="item">
+  <img src="cocinnia.png">
+  <label>Cocinnia</label>
+  <div class="desc">500g • ₹65</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Cool Drink (750ml - ₹35)" name="item">
+  <img src="cool.png">
+  <label>Cool Drink</label>
+  <div class="desc">250ml • ₹35</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Dark Chocolate (100g - ₹120)" name="item">
+  <img src="darkc.png">
+  <label>Dark Chocolate</label>
+  <div class="desc">45g • ₹50</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Dates (500g - ₹150)" name="item">
+  <img src="dates.png">
+  <label>Dates</label>
+  <div class="desc">500g • ₹90</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Dragon Fruit (1pc - ₹90)" name="item">
+  <img src="dragon.png">
+  <label>Dragon Fruit</label>
+  <div class="desc">1pc • ₹90</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Egg Brown (12pcs - ₹80)" name="item">
+  <img src="eggb.png">
+  <label>Egg Brown</label>
+  <div class="desc">12pcs • ₹90</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Eggs (12pcs - ₹70)" name="item">
+  <img src="eggs.png">
+  <label>Eggs</label>
+  <div class="desc">6pcs • ₹50</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Facewash (100ml - ₹90)" name="item">
+  <img src="facewash.png">
+  <label>Facewash</label>
+  <div class="desc">100ml • ₹99</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Guava (1kg - ₹60)" name="item">
+  <img src="guva.png">
+  <label>Guava</label>
+  <div class="desc">500g • ₹89</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Honey (500g - ₹180)" name="item">
+  <img src="honey.png">
+  <label>Honey</label>
+  <div class="desc">200g • ₹89</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Kaju (200g - ₹200)" name="item">
+  <img src="kaju.png">
+  <label>Cashew</label>
+  <div class="desc">200g • ₹199</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Kaju Katli (500g - ₹400)" name="item">
+  <img src="kajukatli.png">
+  <label>Kaju Katli</label>
+  <div class="desc">75g • ₹70</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Kiwi (500g - ₹120)" name="item">
+  <img src="kiwi.png">
+  <label>Kiwi</label>
+  <div class="desc">3 pcs • ₹119</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Milk (1L - ₹50)" name="item">
+  <img src="milk.png">
+  <label>Milk</label>
+  <div class="desc">500mL • ₹39</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Milk Chitale (1L - ₹55)" name="item">
+  <img src="milkchitale.png">
+  <label>Milk Chitale</label>
+  <div class="desc">500mL • ₹39</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Multigrain Bread (400g - ₹45)" name="item">
+  <img src="multigrain_bread.png">
+  <label>Multigrain Bread</label>
+  <div class="desc">400g • ₹54</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Oats (1kg - ₹120)" name="item">
+  <img src="oats.png">
+  <label>Oats</label>
+  <div class="desc">400g • ₹120</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Orange (1kg - ₹80)" name="item">
+  <img src="orange.png">
+  <label>Orange</label>
+  <div class="desc">500g • ₹80</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Papaya (1kg - ₹50)" name="item">
+  <img src="papaya.png">
+  <label>Papaya</label>
+  <div class="desc">1pcs • ₹50</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Park Soap (100g - ₹30)" name="item">
+  <img src="parksoap.jpg">
+  <label>Park Soap</label>
+  <div class="desc">4 * 125 g • ₹169</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Park Soap 1 (100g - ₹35)" name="item">
+  <img src="parksoap1.jpg">
+  <label>Park Soap 1</label>
+  <div class="desc">4 * 125 g • ₹169</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Pineapple (1pc - ₹70)" name="item">
+  <img src="pineapple.png">
+  <label>Pineapple</label>
+  <div class="desc">1pc • ₹80</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Plum (500g - ₹100)" name="item">
+  <img src="plum.png">
+  <label>Plum</label>
+  <div class="desc">500g • ₹80</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Tomato (1kg - ₹40)" name="item">
+  <img src="tomato.png">
+  <label>Tomato</label>
+  <div class="desc">500g • ₹30</div>
+</div>
+
+<div class="product" onclick="toggleProduct(this)">
+  <input type="checkbox" value="Watermelon (1pc - ₹90)" name="item">
+  <img src="waterm.png">
+  <label>Watermelon</label>
+  <div class="desc">1pc • ₹90</div>
+</div>
+
+
+      <!-- 🔁 Repeat this structure for all items -->
     </div>
 
     <button type="button" onclick="sendToEmail()">Proceed & Continue</button>
   </div>
+
   <footer>
-  <div class="footer-left">
-    <p>🛒 Thanks for shopping with <strong>CrazyMart.in</strong> — Enjoy.....!</p>
-  </div>
-  <div class="footer-right">
-    <p>Contact us: <a href="mailto:crazymart25@gmail.com">crazymart25@gmail.com</a></p>
-  </div>
-</footer>
+    <div class="footer-left"><p>🛒 Thanks for shopping with <strong>CrazyMart.in</strong></p></div>
+    <div class="footer-right"><p>Contact: <a href="mailto:crazymart25@gmail.com">crazymart25@gmail.com</a></p></div>
+  </footer>
 
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init("4QLObDnBskSygap0M");  
-    })();
+    (function(){ emailjs.init("4QLObDnBskSygap0M"); })();
+
+    // ✅ Toggle product card
+    function toggleProduct(card) {
+      let checkbox = card.querySelector('input[type="checkbox"]');
+      checkbox.checked = !checkbox.checked;
+      card.classList.toggle("selected", checkbox.checked);
+    }
 
     function sendToEmail() {
       let selected = [];
-      document.querySelectorAll('input[name="item"]:checked').forEach((box) => {
+      document.querySelectorAll('input[name="item"]:checked').forEach(box => {
         selected.push(box.value);
       });
 
@@ -287,25 +459,26 @@ footer a:hover {
       }
 
       emailjs.send("service_ijghezr", "template_qlq9ece", {
-        name: name,
-        phone: phone,
-        address: address,
+        name, phone, address,
         message: selected.join(", "),
         time: new Date().toLocaleString(),
         to_email: "vinayakpalse71@gmail.com"
       }).then(
-        function() {
+        () => {
           alert("✅ Order sent successfully!");
           document.getElementById("groceryForm").reset();
+          document.querySelectorAll('input[name="item"]').forEach(c => c.checked=false);
+          document.querySelectorAll('.product').forEach(p => p.classList.remove("selected"));
         },
-        function(error) {
-          alert("❌ Failed to send order: " + JSON.stringify(error));
-        }
+        (error) => { alert("❌ Failed to send order: " + JSON.stringify(error)); }
       );
     }
   </script>
-  <!-- Footer -->
-
-
 </body>
 </html>
+
+
+
+
+
+
